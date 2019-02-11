@@ -8,10 +8,18 @@ apt-get install binutils
 apt-get install python
 apt-get install build-essential
 apt-get install libssl-dev
-wget https://nodejs.org/dist/v10.14.0/node-v10.14.0.tar.gz
-gunzip node-v10.14.0.tar.gz 
-tar -xvf node-v10.14.0.tar 
-cd node-v10.14.0
+wget https://nodejs.org/dist/v10.15.1/node-v10.15.1.tar.gz
+gunzip node-v10.15.1.tar.gz 
+tar -xvf node-v10.15.1.tar 
+cd node-v10.15.1
 ls
 ./configure
 python tools/gyp_node.py --no-parallel -f make-linux
+make
+make install
+
+vim root.js
+npm init
+npm install express --save
+node root.js
+
