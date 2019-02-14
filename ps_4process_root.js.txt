@@ -1,0 +1,5 @@
+root      1350  0.1  4.2 604892 42888 ?        Sl   22:01   0:00 node /home/alz/desafio2/root.js
+root      1357  0.1  4.0 604844 41044 ?        Sl   22:01   0:00 node /home/alz/desafio2/root.js
+root      1364  0.1  4.0 605516 40848 ?        Sl   22:01   0:00 node /home/alz/desafio2/root.js
+root      1375  0.1  4.0 605028 41356 ?        Sl   22:01   0:00 node /home/alz/desafio2/root.js
+root      1459  0.0  0.0  14224   932 pts/0    R+   22:09   0:00 grep --color=auto node
