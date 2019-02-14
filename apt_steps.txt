@@ -8,6 +8,7 @@ apt-get install binutils
 apt-get install python
 apt-get install build-essential
 apt-get install libssl-dev
+apt-get install apache2 # reverse proxy
 
 wget https://nodejs.org/dist/v10.15.1/node-v10.15.1.tar.gz
 gunzip node-v10.15.1.tar.gz 
@@ -27,9 +28,23 @@ node root.js &
 ps aux |grep node # result = process number node root.js
 kill #node process number
 
-npm install -g pm2
+npm install -g pm2 --save
 cat /proc/cpuinfo > cpus_number.txt # result: 4 cpu's
 pm2 start root.js -i 4
 pm2 list > pm2_4cpus.list
 
 ps aux |grep node > ps_4process_root.js.txt # 4 process pm2 node
+
+npm install http-proxy --save
+
+vim 8081.js
+vim 8082.js
+vim 8083.js
+vim 8084.js
+vim balancer.js
+
+vim /etc/apache2/sites-available/000-default.conf # Configured apache port 80 proxypass to 8080=balancer.js
+
+a2enmod proxy
+a2enmod proxy_http
+service apache2 restart
