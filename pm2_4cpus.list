@@ -1,0 +1,9 @@
+┌──────────┬────┬─────────┬─────────┬──────┬────────┬─────────┬────────┬──────┬───────────┬──────┬──────────┐
+│ App name │ id │ version │ mode    │ pid  │ status │ restart │ uptime │ cpu  │ mem       │ user │ watching │
+├──────────┼────┼─────────┼─────────┼──────┼────────┼─────────┼────────┼──────┼───────────┼──────┼──────────┤
+│ root     │ 0  │ 1.0.0   │ cluster │ 1350 │ online │ 0       │ 49s    │ 0%   │ 48.0 MB   │ root │ disabled │
+│ root     │ 1  │ 1.0.0   │ cluster │ 1357 │ online │ 0       │ 49s    │ 0.1% │ 45.8 MB   │ root │ disabled │
+│ root     │ 2  │ 1.0.0   │ cluster │ 1364 │ online │ 0       │ 49s    │ 0%   │ 45.8 MB   │ root │ disabled │
+│ root     │ 3  │ 1.0.0   │ cluster │ 1375 │ online │ 0       │ 49s    │ 0%   │ 46.2 MB   │ root │ disabled │
+└──────────┴────┴─────────┴─────────┴──────┴────────┴─────────┴────────┴──────┴───────────┴──────┴──────────┘
+ Use `pm2 show <id|name>` to get more details about an app
