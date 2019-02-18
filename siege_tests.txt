@@ -1,0 +1,26 @@
+siege -c 2000 -t 30s http://localhost/
+** SIEGE 3.0.8
+** Preparing 2000 concurrent users for battle.
+The server is now under siege...
+Lifting the server siege...      done.
+
+Transactions:		      116208 hits
+Availability:		      100.00 %
+Elapsed time:		       29.95 secs
+Data transferred:	        2.99 MB
+Response time:		        0.02 secs
+Transaction rate:	     3880.07 trans/sec
+Throughput:		        0.10 MB/sec
+Concurrency:		       60.06
+Successful transactions:      116208
+Failed transactions:	           0
+Longest transaction:	        3.24
+Shortest transaction:	        0.00
+ 
+FILE: /var/log/siege.log
+You can disable this annoying message by editing
+the .siegerc file in your home directory; change
+the directive 'show-logfile' to false.
+root@ubuntu-alz:/home/alz# cat /var/log/siege.log 
+2019-02-18 18:11:03, 116208,      29.95,           2,       0.02,     3880.07,        0.07,       60.06,  116208,       0
+
