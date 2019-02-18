@@ -30,7 +30,7 @@ kill #node process number
 
 npm install -g pm2 --save
 cat /proc/cpuinfo > cpus_number.txt # result: 4 cpu's
-pm2 start root.js -i 4
+pm2 start root.js -i 4 # These processes UP automatically if any problem.
 pm2 list > pm2_4cpus.list
 
 ps aux |grep node > ps_4process_root.js.txt # 4 process pm2 node
@@ -44,6 +44,9 @@ vim 8084.js
 vim balancer.js
 
 vim /etc/apache2/sites-available/000-default.conf # Configured apache port 80 proxypass to 8080=balancer.js
+vim /etc/apache2/sites-available/001-default.conf # Configured apache 80 proxypass to 3000=root.js with pm2 to 4 process. 
+
+# The Apache files UP are different. Is necessary change because response to the same port (80).
 
 a2enmod proxy
 a2enmod proxy_http
