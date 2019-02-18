@@ -48,3 +48,6 @@ vim /etc/apache2/sites-available/000-default.conf # Configured apache port 80 pr
 a2enmod proxy
 a2enmod proxy_http
 service apache2 restart
+
+apt-get install sysstat # idle CPU resources
+apt-get install siege # Web Stress - load test
