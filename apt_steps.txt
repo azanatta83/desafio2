@@ -9,6 +9,7 @@ apt-get install python
 apt-get install build-essential
 apt-get install libssl-dev
 apt-get install apache2 # reverse proxy
+apt-get install ssmtp # Send mail notifications
 
 wget https://nodejs.org/dist/v10.15.1/node-v10.15.1.tar.gz
 gunzip node-v10.15.1.tar.gz 
