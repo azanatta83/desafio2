@@ -57,3 +57,29 @@ apt-get install sysstat # idle CPU resources
 apt-get install siege # Web Stress - load test
 
 siege -c 2000 -t 30s http://localhost/
+
+root@ubuntu-alz:/home/alz/desafio2# ps aux |grep apache2
+root     19505  0.0  0.4  75888  4728 ?        Ss   20:44   0:00 /usr/sbin/apache2 -k start
+www-data 19508  0.0  0.6 365060  6192 ?        Sl   20:44   0:00 /usr/sbin/apache2 -k start
+www-data 19509  0.0  0.6 365060  6192 ?        Sl   20:44   0:00 /usr/sbin/apache2 -k start
+root     19686  0.0  0.1  14224  1032 pts/2    S+   20:49   0:00 grep --color=auto apache2
+root@ubuntu-alz:/home/alz/desafio2# ./upautocrashapache.sh &
+[1] 19687
+root@ubuntu-alz:/home/alz/desafio2# tail apache.log 
+root@ubuntu-alz:/home/alz/desafio2# /etc/init.d/apache2 stop
+[ ok ] Stopping apache2 (via systemctl): apache2.service.
+root@ubuntu-alz:/home/alz/desafio2# tail -f apache.log 
+[ ok ] Starting apache2 (via systemctl): apache2.service.
+Apache is DOWN!
+Apache is restart at 19/02/2019 - 20:50:26
+ssmtp: Cannot open smtp.gmail.com:465
+Email with logs send to azanatta83@gmail.com
+==================================================
+^C
+root@ubuntu-alz:/home/alz/desafio2# ps aux |grep apache2
+root     19795  0.0  0.4  75888  4860 ?        Ss   20:50   0:00 /usr/sbin/apache2 -k start
+www-data 19798  0.0  0.6 365060  6112 ?        Sl   20:50   0:00 /usr/sbin/apache2 -k start
+www-data 19799  0.0  0.6 365060  6112 ?        Sl   20:50   0:00 /usr/sbin/apache2 -k start
+root     19884  0.0  0.0  14224   956 pts/2    S+   20:50   0:00 grep --color=auto apache2
+
+
